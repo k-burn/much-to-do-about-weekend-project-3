@@ -46,13 +46,28 @@ myToDo.controller('TaskController', function($http){
         }).then(function(response){
             getTasks();
         }).catch(function(error){
-            alert('error in deleteRepair')
+            alert('error in deleteTask')
         })
     }//end deleteTask
 
+    function getTasks(){
+        console.log('in getTasks');
+        $http({
+            method: 'GET',
+            url: '/tasks'
+        }).then(function(response){
+            console.log('back from the server with: ', response);
+            vm.tasks=response.data;   
+        }).catch(function(error){
+            console.log('mayday in getTasks', error);
+        })// end $http
+    }//end getTasks
+
 
     //do this on init
-    vm.getTasks();
+    getTasks();
 }); //end controller
+
+
 
 
