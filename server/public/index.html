@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="styles/style.css">
+        <script src="vendors/angular.min.js"></script>
+        <script src="scripts/client.js"></script>
+        <title>To Do</title>
+    </head>
+<body>
+    <div class="container"> 
+        <div id="title">
+            <h1>To Do</h1>
+        </div>
+        <div class= "formContainer">
+            <input type="text" name="taskIn" placeholder="pay credit card bill">
+            <select>
+                    <option value="lowPriority">Low</option>
+                    <option value="slightPriority">!</option>
+                    <option value="mediumPriority">!!</option>
+                    <option value="extremePriority">!!!</option>
+            </select>
+            <button id="addTask" type="submit">Add Task</button>
+        </div>
+        <div id="tableDiv">
+            <table class="task-table">
+                <thead>
+                    <tr>
+                        <th>Task</th>
+                        <th>Priorty</th>
+                        <th>Complete Button</th>
+                        <th>Delete Button</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
