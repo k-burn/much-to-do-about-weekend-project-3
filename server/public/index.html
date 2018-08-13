@@ -35,17 +35,17 @@
             <table class="task-table">
                 <thead>
                     <tr>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
+                        <th style="width: 50px"></th>
+                        <th style="width: 300px"></th>
+                        <th style="width: 50px"></th>
+                        <th style="width: 75px"></th>
                     </tr>
                 </thead>
                 <tbody id="tasksOutput">
                     <div>
                         <tr ng-repeat="task in tc.tasks | orderBy:'+complete'" >
-                            <td ng-style="{'text-decoration': task.complete === true ? 'line-through' : 'none' }">{{task.task}}</td>
-                            <td ng-style="{'text-decoration': task.complete === true ? 'line-through' : 'none' }">{{task.priority}}</td>
+                                <td ng-style="{'text-decoration': task.complete === true ? 'line-through' : 'none' }">{{task.priority}}</td>
+                            <td style="text-align: left;" ng-style="{'text-decoration': task.complete === true ? 'line-through' : 'none' }">{{task.task}}</td>
                             <td><button class="completeButton" ng-click="tc.completeTask(task._id)" type="button">✓</button></td>
                             <td><button class="deleteTask" ng-click="tc.deleteTask(task._id)" type="button">delete</button></td>
                         </tr>
