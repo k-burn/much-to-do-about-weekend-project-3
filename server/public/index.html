@@ -10,32 +10,47 @@
         <title>To Do</title>
     </head>
 <body ng-app="myToDo">
-    <div class="container"> 
+    <div class="container" ng-controller="TaskController as tc"> 
         <div id="title">
             <h1>To Do</h1>
+            Does Beyonce run the world? {{1===1}}
         </div>
         <div class= "formContainer">
-            <input type="text" name="taskIn" placeholder="pay credit card bill">
-            <select>
-                    <option value="lowPriority"></option>
-                    <option value="slightPriority">!</option>
-                    <option value="mediumPriority">!!</option>
-                    <option value="extremePriority">!!!</option>
-            </select>
-            <button id="addTask" type="submit">Add Task</button>
+            <form ng-submit="tc.addTask()">
+                <input type="text" ng-model="tc.taskIn" placeholder="pay credit card bill">
+                <select ng-model="tc.priorityIn">
+                    <option value="low priority"></option>
+                    <option value="!">!</option>
+                    <option value="!!">!!</option>
+                    <option value="!!!">!!!</option>
+                </select>
+                <button id="addTask" type="submit">Add Task</button>
+            </form>
         </div>
         <div id="tableDiv">
             <table class="task-table">
                 <thead>
                     <tr>
                         <th>Task</th>
-                        <th>Priorty</th>
+                        <th>Priority</th>
                         <th>Complete Button</th>
                         <th>Delete Button</th>
                     </tr>
                 </thead>
+                <tbody id="tasksOutput">
+                    <div>
+                        <tr ng-repeat="task in tc.tasks">
+                            <td>{{task.task}}</td>
+                            <td>{{task.priority}}</td>
+                            <td>{{task.complete}}</td>
+                            <td><button class="completeButton" type="button">✓</button></td>
+                            <td><button class="deleteTask" type="button">delete</button></td>
+                        </tr>
+                    </div>
+                </tbody>
             </table>
         </div>
+        <button class ="clearAllTasks" type="button" ng-click="tc.clearTasks()">Clear All Tasks</button>
     </div>
 </body>
 </html>

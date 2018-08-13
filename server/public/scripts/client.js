@@ -14,7 +14,7 @@ myToDo.controller('TaskController', function($http){
         }//end newTask
         //$http call POST
         $http({
-            method: '/POST',
+            method: 'POST',
             url: '/tasks',
             data: newTask
         }).then(function(response){
@@ -39,6 +39,20 @@ myToDo.controller('TaskController', function($http){
         })// end $http
     }//end getTasks
 
+    vm.deleteTask = function(taskId){
+        $http({
+            method: 'DELETE',
+            url: '/tasks/' + taskId
+        }).then(function(response){
+            getTasks();
+        }).catch(function(error){
+            alert('error in deleteRepair')
+        })
+    }//end deleteTask
+
+
     //do this on init
     vm.getTasks();
 }); //end controller
+
+

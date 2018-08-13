@@ -7,7 +7,7 @@ const Schema = mongoose.Schema;
 //define the structure
 const TaskSchema = new Schema({
     task: {type: String},
-    priortiy: {type: String},
+    priority: {type: String},
     complete: {type: Boolean},
 });
 
@@ -40,6 +40,14 @@ router.get('/', (req, res) => {
         res.sendStatus(500);
     });
     
+});
+
+router.delete('/:id', (req, res) => {
+    Task.findByIdAndRemove(req.params.id).then( (response) => {
+        res.sendStatus(200);
+    }).catch((error) => {
+        res.sendStatus(500);
+    });
 })
 
 
