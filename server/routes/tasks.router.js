@@ -24,6 +24,7 @@ router.post('/', (req, res) =>{
     const taskToAdd= new Task(taskFromClient);
     taskToAdd.save().then(() =>{
         console.log('Task added: ', taskToAdd);
+        taskIn.val("");
         res.sendStatus( 201);
     }).catch((error)=>{
         console.log('TROLLS IN THE POST DUNGEON', error);

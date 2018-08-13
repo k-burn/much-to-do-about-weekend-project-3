@@ -20,7 +20,7 @@
             </div>
             <div class= "formContainer">
                 <form ng-submit="tc.addTask()">
-                    <input type="text" ng-model="tc.taskIn" placeholder="e.g. pay credit card bill">
+                    <input type="text" id="taskIn" ng-model="tc.taskIn" placeholder="e.g. pay credit card bill">
                     <select ng-model="tc.priorityIn">
                         <option value="low priority"></option>
                         <option value="!">!</option>
@@ -45,7 +45,7 @@
                     <div>
                         <tr ng-repeat="task in tc.tasks | orderBy:'+complete'" >
                             <td ng-style="{'text-decoration': task.complete === true ? 'line-through' : 'none' }">{{task.task}}</td>
-                            <td>{{task.priority}}</td>
+                            <td ng-style="{'text-decoration': task.complete === true ? 'line-through' : 'none' }">{{task.priority}}</td>
                             <td><button class="completeButton" ng-click="tc.completeTask(task._id)" type="button">✓</button></td>
                             <td><button class="deleteTask" ng-click="tc.deleteTask(task._id)" type="button">delete</button></td>
                         </tr>
