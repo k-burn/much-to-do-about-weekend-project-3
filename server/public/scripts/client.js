@@ -50,6 +50,17 @@ myToDo.controller('TaskController', function($http){
         })
     }//end deleteTask
 
+    vm.completeTask = function(taskId){
+        $http({
+            method: 'PUT',
+            url: '/tasks/taskComplete/' + taskId
+        }).then(function(response) {
+            getTasks();
+        }).catch(function(error){
+            alert('error in completeTask')
+        })
+    }
+
     function getTasks(){
         console.log('in getTasks');
         $http({

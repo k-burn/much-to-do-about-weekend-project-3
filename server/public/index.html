@@ -43,7 +43,7 @@
                             <td>{{task.task}}</td>
                             <td>{{task.priority}}</td>
                             <td>{{task.complete}}</td>
-                            <td><button class="completeButton" type="button">✓</button></td>
+                            <td><button class="completeButton" ng-click="tc.completeTask(task._id)" type="button">✓</button></td>
                             <td><button class="deleteTask" ng-click="tc.deleteTask(task._id)" type="button">delete</button></td>
                         </tr>
                     </div>

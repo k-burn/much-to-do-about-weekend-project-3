@@ -42,6 +42,22 @@ router.get('/', (req, res) => {
     
 });
 
+router.put('/taskComplete/:id', (req, res) => {
+    console.log('Update', req.params.id);
+    Task.findOne({_id: req.params.id}).then((foundTask)=>{
+       console.log('foundTask');
+       foundTask.complete= true;
+       foundTask.save().then((response)=>{
+           res.sendStatus(200);
+       }).catch((error)=> {
+           res.sendStatus(500);
+       })  
+    }).catch((error) => {
+        console.log('error in taskComplete', error);
+        res.sendStatus(500)
+    })  
+});
+
 router.delete('/:id', (req, res) => {
     Task.findByIdAndRemove(req.params.id).then( (response) => {
         res.sendStatus(200);
