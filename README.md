@@ -12,7 +12,7 @@
 
 
 STRETCH GOALS
--[]Implement Bootstrap to take the visuals of the page up a notch.
+-[X]Implement Bootstrap to take the visuals of the page up a notch.
 -[]In whatever fashion you would like, create an 'are you sure: yes / no' option when deleting a task. Once again, you can interpret this however you would like.
 -[x]Move the inputs into a form and use ng-submit so that the user can hit enter to add a new task.
 -[]Add front-end validation to the 'make-a-task' form.

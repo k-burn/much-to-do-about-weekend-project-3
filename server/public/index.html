@@ -12,28 +12,30 @@
     </head>
 <body ng-app="myToDo">
     <div class="container" ng-controller="TaskController as tc"> 
-        <div id="title">
-            <h1>To Do</h1>
-            Does Beyonce run the world? {{1===1}}
-        </div>
-        <div class= "formContainer">
-            <form ng-submit="tc.addTask()">
-                <input type="text" ng-model="tc.taskIn" placeholder="pay credit card bill">
-                <select ng-model="tc.priorityIn">
-                    <option value="low priority"></option>
-                    <option value="!">!</option>
-                    <option value="!!">!!</option>
-                    <option value="!!!">!!!</option>
-                </select>
-                <button id="addTask" type="submit">Add Task</button>
-            </form>
+        <div class="jumbotron">
+            <div id="title">
+                <h1>To Do</h1>
+                Does Beyonce run the world? {{1===1}}
+            </div>
+            <div class= "formContainer">
+                <form ng-submit="tc.addTask()">
+                    <input type="text" ng-model="tc.taskIn" placeholder="e.g. pay credit card bill">
+                    <select ng-model="tc.priorityIn">
+                        <option value="low priority"></option>
+                        <option value="!">!</option>
+                        <option value="!!">!!</option>
+                        <option value="!!!">!!!</option>
+                    </select>
+                    <button class="button" id="addTask" type="submit">Add Task</button>
+                </form>
+            </div>
         </div>
         <div id="tableDiv">
             <table class="task-table">
                 <thead>
                     <tr>
-                        <th>Task</th>
-                        <th>Priority</th>
+                        <th></th>
+                        <th></th>
                         <th></th>
                         <th></th>
                     </tr>

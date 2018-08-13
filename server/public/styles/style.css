@@ -1,0 +1,19 @@
+*{
+    text-align: center;
+    font-family: Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif; 
+}
+
+#tableDiv{
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+}
+table {
+    margin-left:auto; 
+    margin-right:auto;
+}
+.jumbotron{
+    background-color: #a4b0db;
+    color: #ebeaed;
+    
+}
