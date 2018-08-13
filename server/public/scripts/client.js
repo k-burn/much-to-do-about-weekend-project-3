@@ -19,25 +19,13 @@ myToDo.controller('TaskController', function($http){
             data: newTask
         }).then(function(response){
             console.log('returned from POST with', response.data);
-            vm.getTasks();
+            getTasks();
+            vm.taskIn ="";
         }).catch( function(error){
             console.log('error in the POST addTask', error);   
         })//end $http
         console.log('tasks thus-far: ', vm.tasks);  
     }//end addTask
-
-    vm.getTasks = function(){
-        console.log('in getTasks');
-        $http({
-            method: 'GET',
-            url: '/tasks'
-        }).then(function(response){
-            console.log('back from the server with: ', response);
-            vm.tasks=response.data;   
-        }).catch(function(error){
-            console.log('mayday in getTasks', error);
-        })// end $http
-    }//end getTasks
 
     vm.deleteTask = function(taskId){
         $http({

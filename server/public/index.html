@@ -46,14 +46,19 @@
                         <tr ng-repeat="task in tc.tasks | orderBy:'+complete'" >
                                 <td ng-style="{'color': task.priority === '!!!' ? '#f47142': 'none' }">{{task.priority}}</td>
                             <td style="text-align: left;" ng-style="{'text-decoration': task.complete === true ? 'line-through' : 'none' }">{{task.task}}</td>
-                            <td><button class="completeButton" ng-click="tc.completeTask(task._id)" type="button">✓</button></td>
-                            <td><button class="deleteTask" ng-click="tc.deleteTask(task._id)" type="button">delete</button></td>
+                            <td><button class="completeButton" ng-click="tc.completeTask(task._id)" type="button"><img src="images/check-mark.png" alt="checkMark" height="10px" width="10px"></span></button></td>
+                            <td><button class="deleteTask" ng-click="tc.deleteTask(task._id)" type="button"><img src="images/delete-hand-drawn-cross-symbol-outline.png" alt="deleteX" height="10px" width="10px"></button></td>
                         </tr>
                     </div>
                 </tbody>
             </table>
         </div>
         <button class ="clearAllTasks" type="button" ng-click="tc.clearTasks()">Clear All Tasks</button>
+        <br>
+        <footer class="footer">
+            <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Delete cross">Delete Cross</a> from <a href="https://www.flaticon.com/"     title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/"     title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+            <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Check mark">Check Mark</a> from <a href="https://www.flaticon.com/"     title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/"     title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+        </footer>
     </div>
 </body>
 </html>
