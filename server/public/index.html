@@ -33,16 +33,15 @@
                     <tr>
                         <th>Task</th>
                         <th>Priority</th>
-                        <th>Complete Button</th>
-                        <th>Delete Button</th>
+                        <th></th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody id="tasksOutput">
                     <div>
-                        <tr ng-repeat="task in tc.tasks">
-                            <td>{{task.task}}</td>
+                        <tr ng-repeat="task in tc.tasks" >
+                            <td ng-style="{'text-decoration': task.complete === true ? 'line-through' : 'none' }">{{task.task}}</td>
                             <td>{{task.priority}}</td>
-                            <td>{{task.complete}}</td>
                             <td><button class="completeButton" ng-click="tc.completeTask(task._id)" type="button">✓</button></td>
                             <td><button class="deleteTask" ng-click="tc.deleteTask(task._id)" type="button">delete</button></td>
                         </tr>
