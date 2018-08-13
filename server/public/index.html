@@ -39,7 +39,7 @@
                 </thead>
                 <tbody id="tasksOutput">
                     <div>
-                        <tr ng-repeat="task in tc.tasks" >
+                        <tr ng-repeat="task in tc.tasks | orderBy:'+complete'" >
                             <td ng-style="{'text-decoration': task.complete === true ? 'line-through' : 'none' }">{{task.task}}</td>
                             <td>{{task.priority}}</td>
                             <td><button class="completeButton" ng-click="tc.completeTask(task._id)" type="button">✓</button></td>
