@@ -20,3 +20,4 @@ STRETCH GOALS
 - [ ] Make the priorities different colors
 - [ ] Change the complete button to a toggle button that appears differently based on the status of the task
 - [x] Adjust the logic so that completed tasks are brought to the bottom of the page, where the remaining tasks left to complete are brought to the top of the list.
+- [ ] Add animation to have the strike-through appear gradually across the line
